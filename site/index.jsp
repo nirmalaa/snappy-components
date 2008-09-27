@@ -10,6 +10,7 @@
 	<div id="banner">
 		<span><a href="snappy">Demo</a></span>
 		<span><a href="wiki">Wiki</a></span>
+		<span><a href="http://github.com/robmayhew/snappy-components/tree/master">Source</a></span>
 		<span><a href="download.jsp">Download</a></span></div>
 
 	<div id="body">
