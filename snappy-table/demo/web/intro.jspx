@@ -1,0 +1,25 @@
+<ice:panelGroup
+     xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:snappy="http://sensemaker.net/snappy"
+    >
+
+    <p>The snappy table component provides easy implementation along with fast client side
+        rendering and client side events. Select a tab above to see the snappy table component in action.
+        Then download a copy and see how easy Snappy table can integrate into your Icefaces application.</p>
+
+    <p>Features:</p>
+    <ol>
+        <li>Easy setup. (As little as 2 xhtml tags)</li>
+        <li>Instant table paging. (No client - server round trips)</li>
+        <li>Instant table sorting. (No client - server round trips)</li>
+        <li>Instant table selection.</li>
+        <li>Instant form population from table selection.</li>
+        <li>Easy customization.</li>
+
+    </ol>
+
+
+    </ice:panelGroup>

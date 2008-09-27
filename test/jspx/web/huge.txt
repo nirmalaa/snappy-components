@@ -1,0 +1,8 @@
+   <snappy:table id="huge" value="#{huge.invoices}" var="row" chunked="true" chunkSize="20">
+                       <snappy:column header="Number" value="#{row.number}" />
+                       <snappy:column header="Customer" value="#{row.customer}"  />
+                       <snappy:column header="Address" value="#{row.address}"/>
+                       <snappy:column header="Paid" value="#{row.paid}"  />
+                       <snappy:column header="Amount" value="#{row.amount}"  />
+                       <snappy:column header="Date" value="#{row.date}"  />
+   </snappy:table>

@@ -1,0 +1,40 @@
+Testsuite: net.sensemaker.snappy.SnappyTestSuite
+Tests run: 8, Failures: 0, Errors: 5, Time elapsed: 3.832 sec
+
+Testcase: testParse took 0.353 sec
+Testcase: testSupportedDateFormats took 3.314 sec
+Testcase: testFirstPass took 0.008 sec
+	Caused an ERROR
+net.sensemaker.snappy.SnappyUtil.jsonEquals(Lorg/json/JSONObject;Lorg/json/JSONObject;)Z
+java.lang.NoSuchMethodError: net.sensemaker.snappy.SnappyUtil.jsonEquals(Lorg/json/JSONObject;Lorg/json/JSONObject;)Z
+	at net.sensemaker.snappy.table.SnappyTableRenderBypassControl.shouldBypass(SnappyTableRenderBypassControl.java:22)
+	at net.sensemaker.snappy.table.test.SnappyTableRenderBypassControlTest.testFirstPass(SnappyTableRenderBypassControlTest.java:38)
+
+Testcase: testNoChange took 0.001 sec
+	Caused an ERROR
+net.sensemaker.snappy.SnappyUtil.jsonEquals(Lorg/json/JSONObject;Lorg/json/JSONObject;)Z
+java.lang.NoSuchMethodError: net.sensemaker.snappy.SnappyUtil.jsonEquals(Lorg/json/JSONObject;Lorg/json/JSONObject;)Z
+	at net.sensemaker.snappy.table.SnappyTableRenderBypassControl.shouldBypass(SnappyTableRenderBypassControl.java:22)
+	at net.sensemaker.snappy.table.test.SnappyTableRenderBypassControlTest.testNoChange(SnappyTableRenderBypassControlTest.java:50)
+
+Testcase: testSortChange took 0.002 sec
+	Caused an ERROR
+net.sensemaker.snappy.SnappyUtil.jsonEquals(Lorg/json/JSONObject;Lorg/json/JSONObject;)Z
+java.lang.NoSuchMethodError: net.sensemaker.snappy.SnappyUtil.jsonEquals(Lorg/json/JSONObject;Lorg/json/JSONObject;)Z
+	at net.sensemaker.snappy.table.SnappyTableRenderBypassControl.shouldBypass(SnappyTableRenderBypassControl.java:22)
+	at net.sensemaker.snappy.table.test.SnappyTableRenderBypassControlTest.testSortChange(SnappyTableRenderBypassControlTest.java:62)
+
+Testcase: testPageChange took 0 sec
+	Caused an ERROR
+net.sensemaker.snappy.SnappyUtil.jsonEquals(Lorg/json/JSONObject;Lorg/json/JSONObject;)Z
+java.lang.NoSuchMethodError: net.sensemaker.snappy.SnappyUtil.jsonEquals(Lorg/json/JSONObject;Lorg/json/JSONObject;)Z
+	at net.sensemaker.snappy.table.SnappyTableRenderBypassControl.shouldBypass(SnappyTableRenderBypassControl.java:22)
+	at net.sensemaker.snappy.table.test.SnappyTableRenderBypassControlTest.testPageChange(SnappyTableRenderBypassControlTest.java:74)
+
+Testcase: testCurrentPageChange took 0.137 sec
+	Caused an ERROR
+net.sensemaker.snappy.table.SnappyTable.setVar(Ljava/lang/String;)V
+java.lang.NoSuchMethodError: net.sensemaker.snappy.table.SnappyTable.setVar(Ljava/lang/String;)V
+	at net.sensemaker.snappy.table.test.TableRequestDecoderTest.testCurrentPageChange(TableRequestDecoderTest.java:32)
+
+Testcase: testCurrentPageNoChange took 0.002 sec

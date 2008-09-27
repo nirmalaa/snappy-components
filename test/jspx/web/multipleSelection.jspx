@@ -1,0 +1,48 @@
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:snappy="http://sensemaker.net/snappy"
+        >
+
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="snappy.css"/>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="style.css"/>
+    </head>
+    <body>
+    <div id="container">
+        <div id="header">
+            <table><tr><td>
+            <h1>Snappy Calendar</h1>
+            </td>
+            <td>
+            <h3>Developer Preview</h3>
+            </td>
+            </tr></table>
+           </div>
+        <div id="headerBanner">
+            <p>Advanced components for ICEfaces. <a href="http://snappy.sensemaker.net">http://snappy.sensemaker.net</a></p>
+        </div>
+           <ice:form>
+   <snappy:table id="basic" value="#{basic.invoices}" var="row" selectedValue="#{row.selected}"
+                       selectable="true"  selectMultiple="true" selectedClass="selectedRow">
+       <snappy:column header="Number" value="#{row.number}" />
+       <snappy:column header="Customer" value="#{row.customer}"  />
+       <snappy:column header="Address" value="#{row.address}"/>
+       <snappy:column header="Paid" value="#{row.paid}" transformer="checkbox">
+       </snappy:column>
+       <snappy:column header="Amount" value="#{row.amount}"  />
+       <snappy:column header="Date" value="#{row.date}" >
+        	<f:convertDateTime pattern="MM/yyyy"/>
+       </snappy:column>
+   </snappy:table>
+</ice:form>
+    </div>
+
+
+    </body>
+    </html>
+</f:view>

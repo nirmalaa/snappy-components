@@ -1,0 +1,101 @@
+TABLE.snappyDefault
+{
+    border-width: 1px 1px 1px 1px;
+	border-spacing: 2px;
+    width:100%;
+    border-style: solid solid solid solid;
+	border-color: black black black black;
+	border-collapse: collapse;
+	background-color: white;
+
+}
+
+TABLE.snappyDefault TH
+{
+    background-color:#E0E0E0;
+border-bottom:1px solid #B0B0B0;
+border-top:1px solid #B0B0B0;
+font-weight:bold;
+padding:5px;
+    color:#343434;
+font-family:arial,helvetica;
+font-size:8.75pt;
+    /*border-width: 1px 1px 1px 1px;
+    padding: 1px 1px 1px 1px;
+    border-style: inset inset inset inset;
+    border-color: gray gray gray gray;
+    background-color:beige;
+    color:black;
+    font-weight:bold; */
+}
+
+table.snappyDefault td {
+	color:#343434;
+font-family:arial,helvetica;
+font-size:8.75pt;
+
+    border-width: 1px 1px 1px 1px;
+	padding: 1px 1px 1px 1px;
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+
+
+TABLE.snappyDefault TFOOT
+{
+    background-color:beige;
+}
+
+TABLE.pageControl{
+    border-width: 0px;
+	border-spacing: 2px;
+	border-style: none;
+}
+
+TABLE.pageControl td{
+    font-family:arial,helvetica;
+font-size:8.75pt;
+    border-width: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	border-style: none none none none;
+	border-color: none none none none;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+TABLE.snappyDefault .foot{
+     text-align:center;
+}
+
+TABLE.snappyDefault .footLeft{
+     /*float:left; */
+}
+
+TABLE.snappyDefault .footMid{
+    /*float:left; */
+    width:80px;
+}
+
+TABLE.snappyDefault .footRight{
+     /*float:left; */
+}
+
+.oddRow {
+    background-color:#FFFFFF;
+}
+
+.evenRow {
+    background-color:#F9F9F9;
+}
+
+.mouseOver{
+    background-color:orange;
+    color:#ffffff;
+    
+}
+
+.selected{
+   background-color:#F1F1F1;
+    font-weight:bold;
+}

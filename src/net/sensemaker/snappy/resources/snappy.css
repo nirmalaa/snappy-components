@@ -1,0 +1,189 @@
+TABLE.snappyDefault
+{
+    border-width: 1px 1px 1px 1px;
+	border-spacing: 2px;
+    width:100%;
+    border-style: solid solid solid solid;
+	border-color: black black black black;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+TABLE.snappyDefault TH
+{
+    background-color:#E0E0E0;
+    border-bottom:1px solid #B0B0B0;
+    border-top:1px solid #B0B0B0;
+    font-weight:bold;
+    padding:5px;
+    color:#343434;
+    font-family:arial,helvetica;
+    font-size:8.75pt;
+}
+
+TABLE.snappyDefault TD
+{
+	color:#343434;
+    font-family:arial,helvetica;
+    font-size:8.75pt;
+    border-width: 1px 1px 1px 1px;
+	padding: 1px 1px 1px 1px;
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+TABLE.snappyDefault TFOOT
+{
+    background-color:beige;
+}
+
+TABLE.pageControl
+{
+    border-width: 0px;
+	border-spacing: 2px;
+	border-style: none;
+}
+
+TABLE.pageControl TD
+{
+    font-family:arial,helvetica;
+    font-size:8.75pt;
+    border-width: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	border-style: none none none none;
+	border-color: none none none none;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+TABLE.snappyDefault .foot
+{
+     text-align:center;
+}
+
+TABLE.snappyDefault .footLeft
+{
+
+}
+
+TABLE.snappyDefault .footMid
+{
+    width:80px;
+}
+
+TABLE.snappyDefault .footRight
+{
+
+}
+
+TABLE.snappyDefault .oddRow
+{
+    background-color:#FFFFFF;
+}
+
+TABLE.snappyDefault .evenRow
+{
+    background-color:#F9F9F9;
+}
+
+TABLE.snappyDefault .mouseOver
+{
+    background-color:orange;
+    color:#ffffff;
+}
+
+TABLE.snappyDefault .selected
+{
+   background-color:#F1F1F1;
+   font-weight:bold;
+}
+
+.snappyCalendar
+{
+    background-color:#FFFFFF;
+    margin-top:10px;
+    padding-left:4px;
+    padding-right:4px;
+    padding-top:4px;
+    padding-bottom:4px;
+}
+
+.snappyCalendar .header
+{
+    background:#F5F5F5 none repeat scroll 0% 0%;
+    color:#666666;
+    font-weight:bold;
+    padding:4px 1px;
+    text-align:center;
+    border-right:1px solid #D9D9D9;
+    border-left:1px solid #D9D9D9;
+
+}
+
+.snappyCalendar .dayOfWeek
+{
+    border-bottom:1px solid #D9D9D9;
+    border-right:1px solid #D9D9D9;
+    border-top:1px solid #D9D9D9;
+    color:#666666;
+    font-weight:normal;
+    padding:3px;
+    text-align:center;
+    width:2em;
+}
+
+.snappyCalendar .dayCell
+{
+    color:#484848;
+    cursor:pointer;
+    border-bottom:1px solid #D9D9D9;
+    border-right:1px solid #D9D9D9;
+}
+
+.snappyCalendar .weekend
+{
+    color:#484848;
+    background:#F5F5F5 none repeat scroll 0% 0%;
+    cursor:pointer;
+    border-bottom:1px solid #D9D9D9;
+    border-right:1px solid #D9D9D9;
+}
+
+.snappyCalendar .table
+{
+    margin:3px;
+    border-collapse:collapse;
+    border-left:1px solid  #D9D9D9;
+    border-top:1px solid  #D9D9D9;
+}
+
+.snappyCalendar  td
+{
+    padding:4px;
+}
+
+.snappyCalendar .fwd
+{
+   border-right:1px solid  #D9D9D9;
+   cursor:pointer;
+}
+
+.snappyCalendar .back
+{
+   cursor:pointer;
+}
+
+.snappyCalendar .today
+{
+    color:red;
+    border-bottom:1px solid #D9D9D9;
+    border-right:1px solid #D9D9D9;
+}
+
+.snappyCalendar .link
+{
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+

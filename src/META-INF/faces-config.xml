@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE faces-config PUBLIC
+ "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+ "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+
+<faces-config>
+  <render-kit>
+     <description>
+            Snappy Components
+     </description>
+
+  </render-kit>
+
+   <component>
+      <component-type>net.sensemaker.snappy.Table</component-type>
+      <component-class>net.sensemaker.snappy.table.SnappyTable</component-class>
+   </component>
+   
+    <component>
+      <component-type>net.sensemaker.snappy.Column</component-type>
+      <component-class>net.sensemaker.snappy.table.SnappyColumn</component-class>
+   </component>
+
+   <component>
+      <component-type>net.sensemaker.snappy.Calendar</component-type>
+      <component-class>net.sensemaker.snappy.calendar.SnappyCalendar</component-class>
+   </component>
+
+
+
+</faces-config>

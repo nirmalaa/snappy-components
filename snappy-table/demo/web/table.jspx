@@ -1,0 +1,60 @@
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:snappy="http://sensemaker.net/snappy"
+
+        >
+    <html>
+    <head>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="snappy.css"/>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="style.css"/>
+    </head>
+    <body>
+    <div id="container">
+        <div id="header">
+            <table><tr><td>
+            <h1>Snappy table</h1>
+            </td>
+            <td>
+            <h3>Developer Preview</h3>
+            </td>
+            </tr></table>
+           </div>
+        <div id="headerBanner">       
+            <p>Advanced components for ICEfaces. <a href="http://snappy.sensemaker.net">http://snappy.sensemaker.net</a></p>
+        </div>
+        <div id="nav">
+            <ice:form id="navForm">
+                <ice:commandLink value="Basic" action="#{main.goBasic}"/>
+                <ice:commandLink value="Sorting" action="#{main.goSorting}"/>
+                <ice:commandLink value="Selection" action="#{main.goSelection}"/>
+                <ice:commandLink value="Massive Datasets" action="#{main.goHuge}"/>
+            </ice:form>
+        </div>
+        <div id="content">
+                <ice:panelGroup id="basic" rendered="#{main.basic}">
+                    <jsp:directive.include file="basic.jspx" />
+                </ice:panelGroup>
+                <ice:panelGroup id="sorting" rendered="#{main.sorting}">
+                    <jsp:directive.include file="sorting.jspx" />
+                </ice:panelGroup>
+                <ice:panelGroup id="selection" rendered="#{main.selection}">
+                    <jsp:directive.include file="selection.jspx" />
+                </ice:panelGroup>
+                <ice:panelGroup id="huge" rendered="#{main.huge}">
+                    <jsp:directive.include file="huge.jspx" />
+                </ice:panelGroup>
+
+          <ice:form>
+              <br/>
+                     <ice:commandLink action="#{welcome.goBack}">Back</ice:commandLink>        
+
+          </ice:form>
+        </div>
+    </div>
+
+
+    </body>
+    </html>
+</f:view>

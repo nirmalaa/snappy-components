@@ -1,0 +1,36 @@
+<ice:panelGroup 
+     xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:snappy="http://sensemaker.net/snappy"
+    >
+
+      <ice:form id="sortingForm">
+          <div class="infoBox">
+              <div class="head">Instant sorting with just a flag.</div>
+              <div class="content">
+                    <div class="tableDiv">
+                  <snappy:table value="#{basic.invoices}" var="row" sortable="true">
+                      <snappy:column header="Number" value="#{row.number}" />
+                      <snappy:column header="Customer" value="#{row.customer}"  />
+                      <snappy:column header="Address" value="#{row.address}"/>
+                      <snappy:column header="Paid" value="#{row.paid}"  />
+                      <snappy:column header="Amount" value="#{row.amount}"  />
+                      <snappy:column header="Date" value="#{row.date}"  />
+                  </snappy:table>
+                        </div>
+               </div>
+          </div>
+
+      </ice:form>
+
+
+
+    <h2>Code:</h2>
+    <ice:panelGroup>
+        <iframe src="sorting.txt" width="600" height="125">
+
+        </iframe>
+    </ice:panelGroup>
+    </ice:panelGroup>

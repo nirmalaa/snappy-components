@@ -1,0 +1,38 @@
+<ice:panelGroup
+     xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:snappy="http://sensemaker.net/snappy"
+    >
+
+<p>Instant table paging. With very little code</p>
+                <ice:form id="form">
+                    <div  style="float:left;width:700px;">
+   <snappy:table list="#{basic.invoices}" selectionListener="#{basic.selected}" selectedProperty="selected">
+       <snappy:column header="Number" property="number" populate="form:number" columnClass="colNumber" />
+       <snappy:column header="Customer" property="customer" populate="form:customer" columnClass="colName" />
+       <snappy:column header="Address" property="address" populate="form:address" columnClass="colAddress" />
+       <snappy:column header="Paid" property="paid" populate="form:paid" columnClass="colPaid" />
+       <snappy:column header="Amount" property="amount" populate="form:amount" columnClass="colAmount" />
+       <snappy:column header="Date" property="date" populate="form:date" columnClass="colDate" />
+   </snappy:table>
+                    </div>
+   <ice:panelGroup>
+
+   <table>
+       <tr><td>Number</td><td><ice:inputText id="number"/></td></tr>
+       <tr><td>Customer</td><td><ice:inputText id="customer"/></td></tr>
+       <tr><td>Address</td><td><ice:inputTextarea id="address"/></td></tr>
+       <tr><td>Paid</td><td><ice:selectBooleanCheckbox id="paid"/></td></tr>
+       <tr><td>Amount</td><td><ice:inputText id="amount"/></td></tr>
+       <tr><td>Date</td><td><ice:inputText id="date"/></td></tr>
+   </table>
+   </ice:panelGroup>
+
+     <ice:panelGroup>
+         <ice:inputText id="colA" value="#{test.value}"/>
+     </ice:panelGroup>
+
+                   </ice:form>
+    </ice:panelGroup>

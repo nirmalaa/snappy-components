@@ -1,0 +1,10 @@
+<ice:form>
+   <snappy:table list="#{basic.invoices}" sortable="true">
+       <snappy:column header="Number" property="number" />
+       <snappy:column header="Customer" property="customer"  />
+       <snappy:column header="Address" property="address"/>
+       <snappy:column header="Paid" property="paid"  />
+       <snappy:column header="Amount" property="amount"  />
+       <snappy:column header="Date" property="date"  />
+   </snappy:table>
+</ice:form>

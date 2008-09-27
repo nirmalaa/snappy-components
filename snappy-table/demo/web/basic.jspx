@@ -1,0 +1,34 @@
+<ice:panelGroup 
+     xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:snappy="http://sensemaker.net/snappy"
+    >
+
+<p>Instant table paging with minimal code</p>
+
+   <div class="tableDiv">
+<ice:form>
+   <snappy:table id="basic" value="#{basic.invoices}" var="row" >
+       <snappy:column header="Number" value="#{row.number}" />
+       <snappy:column header="Customer" value="#{row.customer}"  />
+       <snappy:column header="Address" value="#{row.address}"/>
+       <snappy:column header="Paid" value="#{row.paid}" transformer="checkbox">
+       </snappy:column>
+       <snappy:column header="Amount" value="#{row.amount}"  />
+       <snappy:column header="Date" value="#{row.date}" >
+        <f:convertDateTime pattern="MM/yyyy"/>
+        </snappy:column>
+
+   </snappy:table>
+</ice:form>
+   </div>
+  <h2>Code:</h2>
+    <ice:panelGroup>
+        <iframe src="basic.txt" width="600" height="125">
+            
+        </iframe>
+    </ice:panelGroup>
+
+    </ice:panelGroup>

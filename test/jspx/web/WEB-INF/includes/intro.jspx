@@ -1,0 +1,9 @@
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:snappy="http://sensemaker.net/snappy"
+
+        >
+
+<p>A super responsize table for icefaces.</p>
+</f:view>

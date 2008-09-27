@@ -1,0 +1,169 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>table
+          (Tag Library Documentation Generator - Generated Documentation)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="table (Tag Library Documentation Generator - Generated Documentation)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="table.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">snappy</font>
+<br>
+            Tag table</h2>
+<hr>Snappy Table. Fast client side paging, sorting, selection, and population.<br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>net.sensemaker.snappy.table.SnappyTableTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>id</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Unique ID.</td>
+</tr>
+<tr valign="top">
+<td>value</td><td>true</td><td>false</td><td><code>java.lang.String</code></td><td>Value for the table model</td>
+</tr>
+<tr valign="top">
+<td>var</td><td>true</td><td>false</td><td><code>java.lang.String</code></td><td>Variable to populate for each row of the table</td>
+</tr>
+<tr valign="top">
+<td>sortable</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>When true table is sortable. Headers will turn into links and data will be sorted on the client. Note: Do not used in conjunction with the chunked setting</td>
+</tr>
+<tr valign="top">
+<td>selectable</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Allows rows to be selected. When true and the mouse is over a table row the mouseOver style class will be applied.</td>
+</tr>
+<tr valign="top">
+<td>selectMultiple</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Select more then one row</td>
+</tr>
+<tr valign="top">
+<td>selectionListener</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Fired when a row / cell is clicked. Must be a method that takes the SnappyRowSelectionEvent class as a parameter</td>
+</tr>
+<tr valign="top">
+<td>selectedValue</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Boolean value of the row object to set when selected</td>
+</tr>
+<tr valign="top">
+<td>rowClassValue</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Get the style class to apply to the current table row from the bean.</br> Example:<br/> Java:</br> <pre> pulbic class Bean{ private int row; public int getRow(){return row;} public int getStyle(){return row%2==0?"grey":"lightgrey";} } </pre> JSPX:<br/> <pre> <snappy:table rowClassValue="#{row.style}" value="#{bean.list}" var="row"> <snappy:column header="Row" value="#{var.row}"/> </snappy:table> </pre></td>
+</tr>
+<tr valign="top">
+<td>rowClasses</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>CSS classes comma separated for row style</td>
+</tr>
+<tr valign="top">
+<td>pageSize</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Number of rows per page</td>
+</tr>
+<tr valign="top">
+<td>styleClass</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>CSS for the table</td>
+</tr>
+<tr valign="top">
+<td>selectedClass</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Style class to apply when a row is selected</td>
+</tr>
+<tr valign="top">
+<td>chunked</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Don't render all table data at once. Break it into chunks so that can be downloaded as needed.</td>
+</tr>
+<tr valign="top">
+<td>chunkSize</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Number of pages in a chunk</td>
+</tr>
+<tr valign="top">
+<td>pageControlClass</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Style class for the page control.</td>
+</tr>
+<tr valign="top">
+<td>currentPage</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Current page shown in the table.</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="table.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

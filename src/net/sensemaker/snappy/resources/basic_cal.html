@@ -1,0 +1,17 @@
+<html>
+<head>
+<script type="text/javascript" src="prototype.js"></script>
+<script src="scriptaculous.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="basic_cal.js"></script>
+<link href="snappy.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="">
+<form>
+<input id="cal" type="text"onkeyup="sp_calendar.parse('cal');" value="07/27/2008" onchange="sp_calendar.parse('cal');"/>
+<input id="calbtn" type="button" value="..." onclick="sp_calendar.display('cal');"/>
+<div id="calformat" style="display:none;">MM/dd/yyyy</div>
+</form>
+
+</body>
+</html>

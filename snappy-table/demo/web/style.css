@@ -1,0 +1,136 @@
+body {
+ 
+
+    font-family:  verdana;
+  }
+
+#content {
+
+    background-color:  #ffffff;
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+h3{
+    margin-left:10px;
+}
+
+A{
+    
+    text-decoration:none;
+}
+
+/* Header, Logo, Search Area, Cart Info, and Flash Banner */
+#header {
+
+  }
+
+#headerBanner{
+   background-color:orange;
+  color:white;
+  padding-left: 10px;
+  padding-right:10px;
+
+    height:50px;
+}
+
+.tableDiv{
+    width:600px;
+}
+
+.colHeader{
+    font-weight:bold;
+}
+
+.colNumber{
+    text-align:right;
+    width:50px;
+
+}
+.colName{
+    width:200px;
+}
+.colAddress{
+    width:200px;
+
+}
+.colPaid{
+    width:50px;
+    text-align:right;
+}
+.colAmount{
+    width:100px;
+    text-align:right;
+}
+.colDate{
+    width:200px;
+    text-align:right;
+}
+
+
+TABLE.editDetails
+
+{
+    border-width: 1px 1px 1px 1px;
+	border-spacing: 2px;
+    border-style: solid solid solid solid;
+	border-color: black black black black;
+	border-collapse: collapse;
+	background-color: white;
+    margin-left:20px
+}
+
+TABLE.editDetails TH
+{
+    background-color:#E0E0E0;
+border-bottom:1px solid #B0B0B0;
+border-top:1px solid #B0B0B0;
+font-weight:bold;
+padding:5px;
+    color:#343434;
+font-family:arial,helvetica;
+font-size:8.75pt;
+    /*border-width: 1px 1px 1px 1px;
+    padding: 1px 1px 1px 1px;
+    border-style: inset inset inset inset;
+    border-color: gray gray gray gray;
+    background-color:beige;
+    color:black;
+    font-weight:bold; */
+}
+
+table.editDetails td {
+	color:#343434;
+font-family:arial,helvetica;
+font-size:8.75pt;
+
+    border-width: 1px 1px 1px 1px;
+	padding: 1px 1px 1px 1px;
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+#editDetailsDiv{
+    padding-left:20px;
+    width:200px;
+    border:1px solid black;
+    background-color:green;
+}
+
+.unpaidRow{
+    background-color:#ff0000;
+}
+
+.unpaidRow td{
+   color:#FFFFFF;font-weight:bold; 
+}
+
+.selectedRow{
+
+   background-color:#0000FF;
+}
+
+.selectedRow td{
+   color:#FFFFFF;
+}

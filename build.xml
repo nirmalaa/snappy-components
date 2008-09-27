@@ -1,0 +1,139 @@
+<project name="snappy" default="dist" basedir=".">
+    <description>
+        Snappy JSF components
+    </description>
+
+    <property name="src" location="src"/>
+    <property environment="env"/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
+    <property file="build.properties"/>
+    <property name="package" location="package"/>
+    <path id="base.path">
+        <fileset dir="lib">
+            <exclude name="jsf-api-1.2.jar"/>
+        </fileset>
+    	<pathelement location="${build}"/>
+
+    </path>
+
+    <target name="compile" description="compile the source ">
+        <mkdir dir="${build}"/>
+        <javac srcdir="${src}" destdir="${build}" debug="true" target="1.5">
+            <classpath refid="base.path"/>
+        </javac>
+    	
+   		<concat destfile="${build}/net/sensemaker/snappy/resources/snappy.js">
+   			<fileset file="${src}/net/sensemaker/snappy/resources/snappy_base.js" />
+   		    	
+   			<fileset file="${src}/net/sensemaker/snappy/resources/table.js" />
+    	  	<fileset file="${src}/net/sensemaker/snappy/resources/basic_cal.js" />
+    	</concat>
+
+        <copy todir="${build}">
+            <fileset dir="${src}">
+                <include name="**/*.xml"/>
+                <include name="**/*.tld"/>
+                <include name="**/*.css"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="dist" depends="compile"
+            description="generate the distribution">
+        <mkdir dir="${dist}"/>
+        <jar jarfile="${dist}/snappy.jar" basedir="${build}"/>
+        <copy file="dist/snappy.jar" todir="test/jspx/lib"/>
+    </target>
+
+    <target name="clean" description="clean up">
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+        <delete dir="${package}"/>
+    </target>
+
+    <target name="test.tomcat5" description="test app"
+            depends="clean, dist">
+        <ant antfile="test/jspx/build.xml" target="tomcat5"
+             inheritall="false"/>
+    </target>
+
+    <target name="package" description="Create Zip Package for download">
+        <ant antfile="test/jspx/build.xml" target="clean" inheritall="false"/>
+        <antcall target="dist"/>
+        <mkdir dir="${package}"/>
+        <tstamp/>
+        
+
+        <copy todir="${package}">
+            <filterchain>
+                <replacetokens >
+                    <token key="version" value="${version}"/>
+                    <token key="build-date" value="${TODAY}"/>
+                </replacetokens>
+            </filterchain>
+            <fileset dir="${dist}">
+                <include name="**/*.jar"/>
+            </fileset>
+            <fileset dir=".">
+                <include name="readme.txt"/>
+            </fileset>
+            <fileset dir="src/META-INF/">
+                <include name="snappy.tld"/>
+            </fileset>
+        </copy>
+        <copydir src="test/jspx" dest="${package}/demo"/>
+        <antcall target="tlddoc"/>
+        <copy todir="${package}/tlddoc">
+            <fileset dir="tlddoc">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+        
+        <zip basedir="${package}" destfile="snappy-dp.zip"/>
+    </target>
+
+    <target name="tlddoc" description="Generate TLD doc">
+        <delete dir="tlddoc"/>
+        <mkdir dir="tlddoc"/>
+        <java jar="tlddoc.jar" fork="true" dir=".">
+            <arg line="-d tlddoc src/META-INF/snappy.tld"/>
+        </java>
+    </target>
+
+    <target name="site"
+            description="build root site">
+        <war destfile="site.war" webxml="site/WEB-INF/web.xml">
+            <fileset dir="site"/>
+            <lib dir="site/WEB-INF/lib">
+            </lib>
+        </war>
+    </target>
+
+    <target name="layout-test" description="Replace colors with samples">
+        <copy file="layout-src.html" tofile="layout.html">
+            <filterchain>
+                <replacetokens >
+                    <token key="bold" value="#003366"/>
+                    <token key="boldSub" value="#3C78B5"/>
+                                        
+                    <token key="light" value="#F1F1F1"/>
+                    <token key="lightSub" value="#DDDDDD"/>
+                    <token key="black" value="black"/>
+                    <token key="white" value="white"/>
+                </replacetokens>
+            </filterchain>
+        </copy>
+    </target>
+	
+	<target name="test" depends="compile" description="Run all unit tests">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes">
+			 <classpath refid="base.path"/>
+
+		  <formatter type="plain"/>
+		  <test name="net.sensemaker.snappy.SnappyTestSuite" todir="test-result"/>
+		</junit>
+
+	
+	</target>
+</project>

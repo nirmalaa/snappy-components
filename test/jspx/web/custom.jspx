@@ -1,0 +1,42 @@
+<ice:panelGroup
+     xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:snappy="http://sensemaker.net/snappy"
+    >
+
+<p>Easy cell renderer customization</p>
+   <ice:form id="customForm">
+       <div style="float:left;width:700px;">
+   <snappy:table value="#{basic.invoices}" var="row" sortable="true" selectedProperty="selected"
+           selectable="true"
+           >
+       <snappy:column header="Number" value="number" populate="selectionForm:number"/>
+       <snappy:column header="Customer" value="customer" populate="selectionForm:customer"  />
+       <snappy:column header="Address" value="address" populate="selectionForm:address"/>
+       <snappy:column header="Paid" value="paid"  populate="selectionForm:paid" transformer="net.sensemaker.snappy.site.BooleanConverter"/>
+       <snappy:column header="Amount" value="amount"  populate="selectionForm:amount" />
+       <snappy:column header="Date" value="date"   />
+   </snappy:table>
+       </div>
+			
+           <table class="editDetails">
+               <tr><th colspan="2">Edit Row</th></tr>
+       <tr><td>Number</td><td><ice:inputText id="number" value="#{basic.number}"/></td></tr>
+       <tr><td>Customer</td><td><ice:inputText id="customer" value="#{basic.customer}"/></td></tr>
+       <tr><td>Address</td><td><ice:inputTextarea id="address" value="#{basic.address}"/></td></tr>
+       <tr><td>Paid</td><td><ice:selectBooleanCheckbox id="paid" value="#{basic.paid}"/></td></tr>
+       <tr><td>Amount</td><td><ice:inputText id="amount" /></td></tr>
+       <tr><th colspan="2" align="right"><ice:commandButton value="Save" action="#{basic.edit}"/></th></tr>
+
+   </table>
+
+   </ice:form>
+    <h2>Code:</h2>
+    <ice:panelGroup>
+        <iframe src="custom.txt" width="600" height="125">
+
+        </iframe>
+    </ice:panelGroup>
+    </ice:panelGroup>

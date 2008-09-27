@@ -1,0 +1,3 @@
+<snappy:calendar value="#{cal.value}" format="MM/dd/yyyy"/>
+ <!-- As a link -->
+<snappy:calendar autoSubmit="true" link="true" value="#{cal.value}" format="MM/dd/yyyy"/>

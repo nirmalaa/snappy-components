@@ -1,0 +1,95 @@
+<project name="snappy" default="war" basedir=".">
+    <description>
+        ${projectName}
+    </description>
+    <!-- set global properties for this build -->
+    <property name="src" location="src"/>
+    <property name="build" location="web/WEB-INF/classes"/>
+    <property name="lib" location="lib/"/>
+    <property environment="env"/>
+
+    <patternset id="included.jars">
+
+            
+            <!-- For all -->
+            <include name="backport-util-concurrent.jar" />
+            <include name="commons-beanutils.jar" />
+            <include name="commons-collections.jar" />
+            <include name="commons-digester.jar" />
+            <include name="commons-discovery.jar" />
+            <include name="commons-el.jar" />
+            <include name="commons-fileupload.jar" />
+            <include name="commons-logging.jar" />
+            <include name="icefaces-comps.jar" />
+            <include name="icefaces.jar" />
+            <include name="jstl.jar" />
+            
+            <!-- JSF 1.1 -->
+            <include name="jsf-api.jar"         if="jsf-1.1" />
+            <include name="jsf-impl.jar"        if="jsf-1.1" />
+            <include name="el-api.jar"          if="jsf-1.1" />
+            <include name="xercesImpl.jar"      if="jsf-1.1" />
+            <include name="xml-apis.jar"        if="jsf-1.1" />
+        
+            <!-- JSF 1.2 -->       
+            <include name="jsf-api-1.2.jar"     if="jsf-1.2" />
+            <include name="jsf-impl-1.2.jar"    if="jsf-1.2" />
+            <include name="el-ri.jar"           if="jsf-1.2" />
+
+    </patternset>
+    
+    <path id="base.path">
+        <fileset dir="${env.ICEFACES_HOME}/lib">
+            <patternset refid="included.jars"/>
+        </fileset>
+        <fileset dir="lib">
+            <include name="snappy.jar" />
+        </fileset>
+    </path>
+
+    <target name="compile"
+            description="compile the source ">
+        <mkdir dir="${build}"/>
+        <javac srcdir="${src}" destdir="${build}">
+            <classpath refid="base.path"/>
+        </javac>
+        <copy todir="${build}">
+            <fileset dir="${src}">
+                <include name="**/*.xml"/>
+                <include name="**/*.tld"/>
+                <include name="**/*.js"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="war" depends="compile">
+        <war destfile="jspx.war" webxml="web/WEB-INF/web.xml">
+            <fileset dir="web"/>
+            <lib dir="${env.ICEFACES_HOME}/lib">
+                <patternset refid="included.jars"/>
+            </lib>
+            <lib dir="lib">
+                <include name="snappy.jar" />
+            </lib>
+        </war>
+    </target>
+
+    <target name="clean"
+            description="clean up">
+        <delete dir="${build}"/>
+    </target>
+
+    <target name="tomcat6" depends="clean" description="Build war for tomcat 6.x">
+        <antcall target="war">
+            <param name="jsf-1.2" value=""/>
+        </antcall>
+        <copy file="jspx.war" todir="${env.TOMCAT_HOME}/webapps"/>
+    </target>
+    
+    <target name="tomcat5" depends="clean" description="Build war for tomcat 5.x">
+        <antcall target="war">
+            <param name="jsf-1.1" value=""/>
+        </antcall>
+        <copy file="jspx.war" todir="${env.TOMCAT_HOME}/webapps"/>
+    </target>
+</project>

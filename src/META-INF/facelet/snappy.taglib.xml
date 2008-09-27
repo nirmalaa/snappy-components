@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE facelet-taglib PUBLIC
+  "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+    
+<facelet-taglib>
+	<namespace>http://sensemaker.net/snappy</namespace>
+	<tag>
+		<tag-name>table</tag-name>
+		<component>
+			<component-type>net.sensemaker.snappy.Table</component-type>
+			<handler-class>net.sensemaker.snappy.table.SnappyTableHandler</handler-class>
+		</component>
+	</tag>
+    <tag>
+		<tag-name>column</tag-name>
+		<component>
+			<component-type>net.sensemaker.snappy.Column</component-type>
+			<handler-class>net.sensemaker.snappy.table.SnappyColumnHandler</handler-class>
+		</component>
+	</tag>
+	    <tag>
+		<tag-name>calendar</tag-name>
+		<component>
+			<component-type>net.sensemaker.snappy.Calendar</component-type>
+			<handler-class>net.sensemaker.snappy.calendar.SnappyCalendarHandler</handler-class>
+		</component>
+	</tag>
+</facelet-taglib>

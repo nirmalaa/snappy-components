@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE taglib
+PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+"http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+  <tlib-version>@version@</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>snappy</short-name>
+  <uri>http://sensemaker.net/snappy</uri>
+  <description>
+  	Snappy JSF Components
+     Version:   @version@
+     Date:      @build-date@
+  </description>
+    <tag>
+        <name>table</name>
+        <tag-class>net.sensemaker.snappy.table.SnappyTableTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>
+	Snappy Table. Fast client side paging, sorting, selection, and population.
+	
+
+	</description>
+        <attribute>
+            <name>id</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Unique ID.</description>
+        </attribute>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Value for the table model</description>
+        </attribute>
+        <attribute>
+            <name>var</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Variable to populate for each row of the table</description>
+        </attribute>
+        <attribute>
+            <name>sortable</name>
+            <required>false</required>        
+            <rtexprvalue>false</rtexprvalue>
+            <description>
+	When true table is sortable. Headers will turn into links and data will be sorted on the client.
+	Note: Do not used in conjunction with the chunked setting
+</description>
+        </attribute>
+        <attribute>
+            <name>selectable</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Allows rows to be selected.
+When true and the mouse is over a table row the mouseOver style class will be applied.
+</description>
+        </attribute>
+        <attribute>
+            <name>selectMultiple</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Select more then one row
+</description>
+        </attribute>
+        <attribute>
+            <name>selectionListener</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Fired when a row / cell is clicked. Must be a method that takes the SnappyRowSelectionEvent
+            class as a parameter</description>
+        </attribute>
+        <attribute>
+            <name>selectedValue</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Boolean value of the row object to set when selected</description>
+        </attribute>
+        <attribute>
+            <name>rowClassValue</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>
+                <![CDATA[
+                Get the style class to apply to the current table row from the bean.</br>
+			Example:<br/>
+			Java:</br>
+			<pre>
+pulbic class Bean{
+	private int row;
+	public int getRow(){return row;}
+	public int getStyle(){return row%2==0?"grey":"lightgrey";}
+}				
+			</pre>
+			JSPX:<br/>
+			<pre>
+<snappy:table rowClassValue="#{row.style}" value="#{bean.list}" var="row">
+	<snappy:column header="Row" value="#{var.row}"/>
+</snappy:table>
+			</pre>
+             ]]>
+</description>
+        </attribute>
+        <attribute>
+            <name>rowClasses</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>CSS classes comma separated for row style</description>
+        </attribute>
+        <attribute>
+            <name>pageSize</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Number of rows per page</description>
+        </attribute>
+        <attribute>
+            <name>styleClass</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>CSS for the table</description>
+        </attribute>
+        <attribute>
+            <name>selectedClass</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Style class to apply when a row is selected</description>
+        </attribute>
+        <attribute>
+            <name>chunked</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Don't render all table data at once. Break it into chunks so that can be downloaded as needed.</description>
+        </attribute>
+        <attribute>
+            <name>chunkSize</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Number of pages in a chunk</description>
+        </attribute>      
+        <attribute>
+        	<name>pageControlClass</name>
+        	<required>false</required>
+        	<rtexprvalue>false</rtexprvalue>
+        	<description>Style class for the page control.</description>
+        </attribute>         
+        <attribute>
+        	<name>currentPage</name>
+        	<required>false</required>
+        	<rtexprvalue>false</rtexprvalue>
+        	<description>Current page shown in the table.</description>
+        </attribute>
+    </tag>
+
+     <tag>
+        <name>column</name>
+        <tag-class>net.sensemaker.snappy.table.SnappyColumnTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>Table</description>
+        <attribute>
+            <name>header</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Column Header</description>
+        </attribute>
+         <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Value of the column</description>
+        </attribute>
+         <attribute>
+            <name>populate</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>The ID of a field that will be populated with the property value
+                when the row is selected</description>
+        </attribute>
+         <attribute>
+            <name>headerClass</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>CSS Used for the header</description>
+        </attribute>
+        <attribute>
+            <name>columnClass</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>CSS used for the column</description>
+        </attribute>
+        <attribute>
+            <name>transformer</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Transformer class used to render column cells</description>
+        </attribute>
+        <attribute>
+            <name>transformerOptions</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>JSON Options to be passed to conveter</description>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>calendar</name>
+        <tag-class>net.sensemaker.snappy.calendar.SnappyCalendarTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>Javascript calendar</description>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Calendar value</description>
+        </attribute>
+         <attribute>
+            <name>format</name>
+            <required>flase</required>
+            <rtexprvalue>false</rtexprvalue>
+            <description>Format of the calendar</description>
+        </attribute>
+        <attribute>
+           <name>styleClass</name>
+           <required>flase</required>
+           <rtexprvalue>false</rtexprvalue>
+           <description>Style Class of the calendar</description>
+       </attribute>
+        <attribute>
+           <name>buttonValue</name>
+           <required>flase</required>
+           <rtexprvalue>false</rtexprvalue>
+           <description>Button Value</description>
+       </attribute>
+        <attribute>
+           <name>link</name>
+           <required>flase</required>
+           <rtexprvalue>false</rtexprvalue>
+           <description>When true renders the displayed date as a link</description>
+       </attribute>
+        <attribute>
+           <name>autoSubmit</name>
+           <required>flase</required>
+           <rtexprvalue>false</rtexprvalue>
+           <description>Fire when date is selected</description>
+       </attribute>
+        <attribute>
+           <name>startDay</name>
+           <required>flase</required>
+           <rtexprvalue>false</rtexprvalue>
+           <description>0 = Sunday -> 6 = Saturday</description>
+       </attribute>
+        <attribute>
+           <name>months</name>
+           <required>flase</required>
+           <rtexprvalue>false</rtexprvalue>
+           <description>Comma seperated list Januaray, February</description>
+       </attribute>
+        <attribute>
+           <name>daysOfWeek</name>
+           <required>flase</required>
+           <rtexprvalue>false</rtexprvalue>
+           <description>Comada Seperated list Sun,Mon, Tues</description>
+       </attribute>
+    </tag>
+ </taglib>

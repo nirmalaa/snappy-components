@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+
+<!DOCTYPE faces-config PUBLIC
+        "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+        "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+
+<faces-config>
+    <managed-bean>
+        <managed-bean-name>test</managed-bean-name>
+        <managed-bean-class>net.sensemaker.snappy.test.TestBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>main</managed-bean-name>
+        <managed-bean-class>net.sensemaker.snappy.site.Main</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>info</managed-bean-name>
+        <managed-bean-class>net.sensemaker.snappy.site.Info</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>basic</managed-bean-name>
+        <managed-bean-class>net.sensemaker.snappy.site.Basic</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>huge</managed-bean-name>
+        <managed-bean-class>net.sensemaker.snappy.site.Huge</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+        <managed-bean>
+        <managed-bean-name>welcome</managed-bean-name>
+        <managed-bean-class>net.sensemaker.snappy.site.Welcome</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+        <managed-bean>
+        <managed-bean-name>cal</managed-bean-name>
+        <managed-bean-class>net.sensemaker.snappy.site.Cal</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+   <navigation-rule>
+    <from-view-id>/welcome.jspx</from-view-id>
+    <navigation-case>
+      <from-outcome>table</from-outcome>
+      <to-view-id>/table.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>calendar</from-outcome>
+      <to-view-id>/calendar.jspx</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+     <navigation-rule>
+         <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/welcome.jspx</to-view-id>
+    </navigation-case>
+         </navigation-rule>
+</faces-config>

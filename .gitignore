@@ -1,0 +1,7 @@
+build/*
+package/*
+out/*
+dist/*
+*.war
+*.class
+*.zip

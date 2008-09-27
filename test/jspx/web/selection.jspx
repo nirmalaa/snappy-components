@@ -1,0 +1,52 @@
+<ice:panelGroup 
+     xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:snappy="http://sensemaker.net/snappy"
+    >
+
+      <ice:form id="selectionForm">
+          <div class="infoBox">
+              <div class="head">Instant table Selection with form population</div>
+              <div class="content">
+                  <div style="float:left;width:700px;margin-right:10px;">
+               <snappy:table value="#{basic.invoices}" sortable="true" selectMultiple="true" selectedValue="#{row.selected}"
+                       selectable="true"   rowClassValue="#{row.style}"    selectedClass="selectedRow"
+                       var="row">
+
+                   <snappy:column header="Number" value="#{row.number}" populate="selectionForm:number"/>
+                   <snappy:column header="Customer" value="#{row.customer}" populate="selectionForm:customer"  />
+                   <snappy:column header="Address" value="#{row.address}" populate="selectionForm:address"/>
+                   <snappy:column header="Paid" value="#{row.paid}"  populate="selectionForm:paid" />
+                   <snappy:column header="Amount" value="#{row.amount}"  populate="selectionForm:amount" />
+                   <snappy:column header="Date" value="#{row.date}"   />
+               </snappy:table>
+                   </div>
+
+                       <table class="editDetails">
+                           <tr><th colspan="2">Edit Row</th></tr>
+                   <tr><td>Number</td><td><ice:inputText id="number" value="#{basic.number}"/></td></tr>
+                   <tr><td>Customer</td><td><ice:inputText id="customer" value="#{basic.customer}"/></td></tr>
+                   <tr><td>Address</td><td><ice:inputTextarea id="address" value="#{basic.address}"/></td></tr>
+                   <tr><td>Paid</td><td><ice:selectBooleanCheckbox id="paid" value="#{basic.paid}"/></td></tr>
+                   <tr><td>Amount</td><td><ice:inputText id="amount" value="#{basic.amount}"/></td></tr>
+                   <tr><th colspan="2" align="right"><ice:commandButton value="Save" action="#{basic.edit}"/></th></tr>
+
+               </table>
+               </div>
+          </div>
+
+      </ice:form>
+
+
+
+
+
+    <h2>Code:</h2>
+    <ice:panelGroup>
+        <iframe src="selection.txt" width="600" height="125">
+
+        </iframe>
+    </ice:panelGroup>
+    </ice:panelGroup>

@@ -1,0 +1,94 @@
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:snappy="http://sensemaker.net/snappy">
+    
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="./snappyresources/snappy.css"/>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="style.css"/>
+		<script src="./snappyresources/snappy.js"/>
+    </head>
+    <body>
+    <div id="title">
+        <div id="logo">Snappy JSF Components</div>
+        <div id="logoSub">Developer Preview</div>
+    </div>
+    <ice:form id="form">
+        <div id="banner">
+            <span>   <ice:commandLink action="#{welcome.goBack}">Back</ice:commandLink>
+   </span>
+    </div>
+
+        <div id="body">
+            <div class="infoBox">
+                <div class="head">Calendar</div>
+                <div class="content">
+                    <p>Finally a Client side calendar for ICEFaces. Select a date below by pressing the '...' button.
+                    All rendering is handled in the browser without waiting for a server response.</p>
+                     <br/>
+                    <ice:panelGroup>
+
+                                         Select Date:<snappy:calendar  value="#{cal.value}" format="MM/dd/yyyy"/>
+                                      </ice:panelGroup>
+
+                    <ice:outputText value="Date set to:"/>
+                    <ice:outputText value="#{cal.value}">
+                        <f:convertDateTime pattern="MM/dd/yyyy"/>
+                    </ice:outputText>
+                    <ice:commandButton value="Set" action="#{cal.set}"/>
+                </div>
+            </div>
+
+            <div class="infoBox">
+                <div class="head">Link Mode</div>
+                <div class="content">
+                      <ice:panelGroup>
+
+                       Select Date:<snappy:calendar id="link" link="true" autoSubmit="true" value="#{cal.valueLink}" format="MM/dd/yyyy"/>
+                    </ice:panelGroup>
+                    <br/>
+                    <ice:outputText value="Date set to:"/>
+                    <ice:outputText value="#{cal.valueLink}">
+                        <f:convertDateTime pattern="MM/dd/yyyy"/>
+                    </ice:outputText>
+
+                </div>
+            </div>
+
+            <div class="infoBox">
+                <div class="head">Localized</div>
+                <div class="content">
+                    <ice:panelGroup>
+                       Select Date:<snappy:calendar id="link2" link="true" autoSubmit="true" value="#{cal.valueLinkLocale}" format="MM/dd/yyyy"
+                            startDay="1"
+                            months="janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre"
+                            daysOfWeek="dimanche,lundi,mardi,mereredi,jeudi,vendredi,samedi"
+
+                            />
+                    </ice:panelGroup>
+                    <br/>
+                    <ice:outputText value="Date set to:"/>
+                    <ice:outputText value="#{cal.valueLinkLocale}">
+                        <f:convertDateTime pattern="MM/dd/yyyy"/>
+                    </ice:outputText>
+
+                </div>
+            </div>
+        </div>
+        </ice:form>
+
+
+            <br/>
+            <h2>Code:</h2>
+    <ice:panelGroup>
+        <iframe src="calendar.txt" width="600" height="125">
+
+        </iframe>
+ 		</ice:panelGroup>
+    </body>
+    </html>
+</f:view>

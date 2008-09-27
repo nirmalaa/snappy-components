@@ -1,0 +1,48 @@
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ice="http://www.icesoft.com/icefaces/component"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+        xmlns:snappy="http://sensemaker.net/snappy"
+
+        >
+    <html>
+    <head>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="snappy.css"/>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="style.css"/>
+		<script src="./snappyresources/snappy.js"/>
+    </head>
+    <body>
+
+    <div id="title">
+        <div id="logo">Snappy JSF Components</div>
+        <div id="logoSub">Developer Preview</div>
+    </div>
+        <div id="banner">
+            <ice:form id="bannerForm">
+ <span><a href="http://snappy.sensemaker.net">Home</a></span>
+                <span><ice:commandLink action="#{welcome.goTable}">Snappy Table</ice:commandLink></span>
+                <span><ice:commandLink action="#{welcome.goCalendar}">Snappy Calendar</ice:commandLink></span>
+
+            </ice:form>
+        </div>
+        <div id="body">
+            <ice:form>
+            <div class="infoBox">
+                <div class="head"><ice:commandLink action="#{welcome.goTable}">Snappy Table</ice:commandLink></div>
+                <div class="content">
+                    <p>Client side paging, sorting and selection.</p>
+                </div>
+            </div>
+
+            <div class="infoBox">
+                <div class="head"><ice:commandLink action="#{welcome.goCalendar}">Snappy Calendar</ice:commandLink></div>
+                <div class="content">
+                   <p>A client side calendar control.</p>
+                 </div>
+            </div>
+            </ice:form>
+        </div>
+
+    </body>
+    </html>
+</f:view>

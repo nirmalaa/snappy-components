@@ -1,0 +1,156 @@
+BODY{
+    background-color:#F1F1F1;
+}
+#title{
+    background-color:#003366;
+    color:white;
+    padding:5px;
+    font-size:2em;
+}
+#banner{
+    background-color:#3C78B5;
+    color:white;
+    padding:5px;
+    font-weight:bold;
+}
+
+#banner span{
+    margin-left:10px;
+}
+
+#banner span A{
+    color:white;
+    text-decoration:none;
+}
+#banner span A:hover{
+    text-decoration:underline;
+}
+
+.infoBox{
+    width:90%;
+    border: 1px solid #003366;
+    margin-top:5px;
+    margin-left:10px;
+    margin-right:10px;
+    background-color:white;
+
+}
+
+.infoBox .head{
+    background-color:#DDDDDD;
+    color:#003366;
+    font-weight:bold;
+    font-size:1.25em;
+    padding-left:2px;
+    padding-top:2px;
+}
+
+.infoBox .head A{
+    color:#003366;
+    text-decoration:none;
+}
+
+.infoBox .head A:hover{
+    text-decoration:underline;
+}
+
+.infoBox .content{
+    padding-left:5px;
+    padding-top:5px;
+    padding-right:5px;
+    padding-bottom:5px;
+}
+
+#body{
+
+}
+
+.tableDiv{
+    width:600px;
+}
+
+.colHeader{
+    font-weight:bold;
+}
+
+.colNumber{
+    text-align:right;
+    width:50px;
+
+}
+.colName{
+    width:200px;
+}
+.colAddress{
+    width:200px;
+
+}
+.colPaid{
+    width:50px;
+    text-align:right;
+}
+.colAmount{
+    width:100px;
+    text-align:right;
+}
+.colDate{
+    width:200px;
+    text-align:right;
+}
+
+
+TABLE.editDetails
+
+{
+    border-width: 1px 1px 1px 1px;
+	border-spacing: 2px;
+    border-style: solid solid solid solid;
+	border-color: black black black black;
+	border-collapse: collapse;
+	background-color: white;
+    margin-left:20px
+}
+
+TABLE.editDetails TH
+{
+    background-color:#E0E0E0;
+	border-bottom:1px solid #B0B0B0;
+	border-top:1px solid #B0B0B0;
+	font-weight:bold;
+	padding:5px;
+    color:#343434;
+	font-family:arial,helvetica;
+	font-size:8.75pt;
+}
+
+table.editDetails td {
+	color:#343434;
+	font-family:arial,helvetica;
+	font-size:8.75pt;
+    border-width: 1px 1px 1px 1px;
+	padding: 1px 1px 1px 1px;
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+#editDetailsDiv{
+    padding-left:20px;
+    width:200px;
+    border:1px solid black;
+    background-color:green;
+}
+
+.unpaidRow{
+    background-color:#ff6666;
+    color:black;
+    font-weight:bold;
+}
+
+.selectedRow{
+   background-color:#DDDDDD;
+}
+
+.selectedRow td{
+   color:#F1F1F1;
+}

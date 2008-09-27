@@ -1,0 +1,10 @@
+   <snappy:table value="#{basic.invoices}" var="row" sortable="true" selectedProperty="selected"
+           selectable="true"
+           >
+       <snappy:column header="Number" value="number" populate="selectionForm:number"/>
+       <snappy:column header="Customer" value="customer" populate="selectionForm:customer"  />
+       <snappy:column header="Address" value="address" populate="selectionForm:address"/>
+       <snappy:column header="Paid" value="paid"  populate="selectionForm:paid" transformer="net.sensemaker.snappy.site.BooleanConverter"/>
+       <snappy:column header="Amount" value="amount"  populate="selectionForm:amount" />
+       <snappy:column header="Date" value="date"   />
+   </snappy:table>

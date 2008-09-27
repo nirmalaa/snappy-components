@@ -1,0 +1,27 @@
+   <ice:form id="selectionForm">
+       <div style="float:left;width:700px;">
+ <snappy:table value="#{basic.invoices}" sortable="true" selectedProperty="selected"
+           selectable="true"   rowStyleProperty="style"    selectedClass="selectedRow"
+           var="row">
+
+       <snappy:column header="Number" value="#{row.number}" populate="selectionForm:number"/>
+       <snappy:column header="Customer" value="#{row.customer}" populate="selectionForm:customer"  />
+       <snappy:column header="Address" value="#{row.address}" populate="selectionForm:address"/>
+       <snappy:column header="Paid" value="#{row.paid}"  populate="selectionForm:paid" />
+       <snappy:column header="Amount" value="#{row.amount}"  populate="selectionForm:amount" />
+       <snappy:column header="Date" value="#{row.date}"   />
+   </snappy:table>
+       </div>
+
+           <table class="editDetails">
+               <tr><th colspan="2">Edit Row</th></tr>
+       <tr><td>Number</td><td><ice:inputText id="number" value="#{basic.number}"/></td></tr>
+       <tr><td>Customer</td><td><ice:inputText id="customer" value="#{basic.customer}"/></td></tr>
+       <tr><td>Address</td><td><ice:inputTextarea id="address" value="#{basic.address}"/></td></tr>
+       <tr><td>Paid</td><td><ice:selectBooleanCheckbox id="paid" value="#{basic.paid}"/></td></tr>
+       <tr><td>Amount</td><td><ice:inputText id="amount" value="#{basic.amount}"/></td></tr>
+       <tr><th colspan="2" align="right"><ice:commandButton value="Save" action="#{basic.edit}"/></th></tr>
+
+   </table>
+
+   </ice:form>
