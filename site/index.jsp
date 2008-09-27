@@ -5,7 +5,7 @@
 <body>
 <div id="title">
 	<div id="logo">Snappy JSF Components</div>
-	<div id="logoSub">Developer Preview</div>
+	<div id="logoSub">Open Source - Version 1.0</div>
 </div>
 	<div id="banner">
 		<span><a href="snappy">Demo</a></span>
@@ -16,7 +16,7 @@
 		<div class="infoBox">
 			<div class="head">About</div>
 			<div class="content">
-				<p>The Snappy JSF component libary provides easy implementation along with fast client side rendering and client side events.</p>
+				<p>The Snappy JSF component library provides easy implementation along with fast client side rendering and client side events.</p>
 				<p>Download a copy and see how easy Snappy Components can integrate into your Icefaces application.</p>
 			</div>
 		</div>

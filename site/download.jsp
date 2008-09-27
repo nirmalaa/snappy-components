@@ -64,9 +64,9 @@
 		<div class="infoBox">
 			<div class="head">Download</div>
 			<div class="content">
-				Download Developer Preview<br/>
+				Download<br/>
 
-                Sept 13, 2008 - <a href="snappy-rc1.zip">Download - Release Candidate - 1</a>
+                Sept 13, 2008 - <a href="snappy-1.0.zip">Download - 1.0</a>
 		 	</div>
 		</div>
 
