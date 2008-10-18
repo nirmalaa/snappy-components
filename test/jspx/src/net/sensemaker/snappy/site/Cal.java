@@ -14,6 +14,7 @@ public class Cal {
     private Date value = new Date();
     private Date valueLink = new Date();
     private Date valueLinkLocale = new Date();
+    private Date nullDate;
 
     public Date getValue() {
         return value;
@@ -39,6 +40,16 @@ public class Cal {
     public Date getValueLinkLocale()
     {
     	return valueLinkLocale;
+    }
+
+    public Date getNullDate()
+    {
+    	return nullDate;
+    }
+    
+    public void setNullDate(Date d)
+    {
+    	nullDate = d;
     }
     
     public void set(){}

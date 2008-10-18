@@ -52,9 +52,9 @@
         <delete dir="${package}"/>
     </target>
 
-    <target name="test.tomcat5" description="test app"
+    <target name="test.tomcat6" description="test app"
             depends="clean, dist">
-        <ant antfile="test/jspx/build.xml" target="tomcat5"
+        <ant antfile="test/jspx/build.xml" target="tomcat6"
              inheritall="false"/>
     </target>
 

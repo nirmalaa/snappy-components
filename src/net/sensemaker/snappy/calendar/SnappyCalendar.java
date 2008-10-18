@@ -276,7 +276,9 @@ public class SnappyCalendar extends UIComponentBase implements ValueHolder {
             w.writeAttribute("class","link");
             w.writeAttribute("href", "#");
             w.writeAttribute("onclick","sp_calendar.display('" + fieldId + "');return false;");
-            w.writeText(sdf.format(getValue()));
+            if(getValue() != null)
+            	w.writeText(sdf.format(getValue()));
+            
             w.endElement("a");
         }else{
             w.startElement("input");

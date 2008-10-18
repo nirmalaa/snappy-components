@@ -60,6 +60,24 @@
             </div>
 
             <div class="infoBox">
+                <div class="head">Null Date</div>
+                <div class="content">
+                      <ice:panelGroup>
+
+                       Select Date:<snappy:calendar id="nullDate" link="false" autoSubmit="true" value="#{cal.nullDate}" format="MM/dd/yyyy"/>
+                    </ice:panelGroup>
+                    <br/>
+                    <ice:outputText value="Date set to:"/>
+					
+                    <ice:outputText value="#{cal.nullDate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy"/>
+                    </ice:outputText>
+
+                </div>
+            </div>
+
+
+            <div class="infoBox">
                 <div class="head">Localized</div>
                 <div class="content">
                     <ice:panelGroup>

@@ -80,6 +80,7 @@ sp_calendar = {
         sp_calendar.render(inputId, date);
     },
     show:function(inputId, date){
+    	if($(inputId).value == '')return;
         var id = inputId + sp_calendar.DIV_ID;
         var div = $(id);
         var slideDown = true;
@@ -249,6 +250,7 @@ sp_calendar = {
         var day = format.indexOf("dd");
         var year = format.indexOf("yyyy");
         var value = $(inputId).value;
+        if(value == '')return;
         var seperators = new Array();
         var valueA = value.split('');
         var i =0;
@@ -296,7 +298,8 @@ sp_calendar = {
         return $(inputId + 'format').innerHTML;
     },
     renderCal:function(target,inputId, date){
-        //todo proper cleanup
+    	if(date == "")return;
+    	//todo proper cleanup
         //var SDOW = 1; //Monday
         var listeners = sp_calendar.listeners[inputId];
         if(listeners != null){
@@ -311,6 +314,7 @@ sp_calendar = {
         var settings = sp_calendar.get(inputId);
         var SDOW = settings.startDay;
         listeners = new Array();
+        if(!target)return;
         target.innerHTML = '';
         sp_calendar.listeners[inputId] = listeners;
 
